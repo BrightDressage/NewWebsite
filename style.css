@@ -259,16 +259,23 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
     flex-direction: column;
     position: fixed;
     top: 70px; left: 0; right: 0; bottom: 0;
-    background: rgba(10,10,10,0.98);
-    backdrop-filter: blur(12px);
+    background: rgba(5,5,5,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 40px;
     z-index: 999;
+    border-top: 1px solid rgba(201,169,110,0.2);
   }
-  .nav-links.open a {
-    font-size: 1.1rem;
-    letter-spacing: 0.12em;
+  .nav-links.open li a {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 500;
+  }
+  .nav-links.open li a:hover {
+    color: var(--accent) !important;
   }
 
   /* SHARED */
@@ -341,6 +348,26 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .sponsors-section { padding: 72px 0; }
   .sponsors-grid { grid-template-columns: 1fr; max-width: 360px; gap: 20px; }
 }
+
+
+  /* STAT BAR */
+  .stat-bar { flex-wrap: wrap; padding: 0; }
+  .stat { padding: 14px 20px; width: 50%; border-right: none; box-sizing: border-box; }
+  .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-num { font-size: 1.4rem; }
+  .stat-divider { display: none; }
+
+  /* ABOUT IMG */
+  .img-label { font-size: 1.3rem; }
+  .img-label small { font-size: 0.9rem; }
+  .about-img-placeholder { aspect-ratio: 4/3; }
+
+  /* COACHING PACKAGES - stack packages above buttons on mobile */
+  .coaching-inner { display: flex; flex-direction: column; }
+  .coaching-text { order: 1; }
+  .coaching-card-wrap { order: 2; margin-top: 32px; }
+  .coaching-btns { order: 3; margin-top: 24px; flex-direction: column; gap: 12px; }
+  .coaching-btns a { text-align: center; width: 100%; }
 
 /* Small mobile: up to 480px */
 @media (max-width: 480px) {
