@@ -27,18 +27,19 @@ window.addEventListener('scroll', () => {
 
 // Hamburger mobile menu
 const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.nav-links');
-hamburger && hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  hamburger.innerHTML = navLinks.classList.contains('open') ? '&#10005;' : '&#9776;';
-});
-// Close menu when a nav link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.innerHTML = '&#9776;';
+const mobileNav = document.querySelector('.nav-links');
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.innerHTML = isOpen ? '&#10005;' : '&#9776;';
   });
-});
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.innerHTML = '&#9776;';
+    });
+  });
+}
 
 // Animate elements on scroll (Intersection Observer)
 const animateEls = document.querySelectorAll('.service-card, .testi-card, .pts-card, .coaching-card, .about-grid, .results-table');

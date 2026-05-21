@@ -242,6 +242,7 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .points-summary { grid-template-columns: repeat(4, 1fr); }
   .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
   .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  .coaching-inner { grid-template-columns: 1fr; gap: 48px; }
   .coaching-grid { grid-template-columns: 1fr; gap: 48px; }
 }
 
@@ -276,12 +277,12 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .section-intro { margin-bottom: 40px; font-size: 0.9rem; }
 
   /* HERO */
-  #hero { padding: 0 20px; min-height: 100svh; }
-  .hero-content { padding-top: 90px; }
-  .hero-content h1 { font-size: clamp(2.8rem, 12vw, 5rem); }
-  .hero-sub { font-size: 0.7rem; }
-  .hero-location { font-size: 0.78rem; }
-  .hero-desc { font-size: 0.9rem; max-width: 100%; }
+  #hero { min-height: 100svh; }
+  .hero-content { padding: 100px 20px 60px; text-align: left; max-width: 100%; }
+  .hero-content h1 { font-size: clamp(2.6rem, 11vw, 4.5rem); text-align: left; }
+  .hero-sub { font-size: 0.7rem; text-align: left; }
+  .hero-location { font-size: 0.78rem; text-align: left; }
+  .hero-desc { font-size: 0.9rem; max-width: 100%; text-align: left; }
   .hero-btns { flex-direction: column; gap: 12px; align-items: flex-start; }
   .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; font-size: 0.75rem; }
   .hero-stats { flex-wrap: wrap; gap: 0; }
@@ -303,7 +304,11 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 
   /* ONLINE COACHING */
   #online-coaching { padding: 72px 0; }
+  .coaching-inner { grid-template-columns: 1fr; gap: 40px; }
   .coaching-grid { grid-template-columns: 1fr; gap: 40px; }
+  .coaching-card-wrap { gap: 16px; }
+  .coaching-btns { flex-direction: column; }
+  .coaching-btns a { text-align: center; }
   .coaching-features { grid-template-columns: 1fr; gap: 16px; }
   .coaching-feature { padding: 20px; }
 
