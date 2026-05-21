@@ -227,4 +227,123 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 .sponsor-sub { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 500; display: block; margin-top: 4px; }
 .sponsor-desc { font-size: 0.88rem; color: var(--mid-grey); line-height: 1.7; flex: 1; }
 .sponsor-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-@media (max-width: 900px) { .sponsors-grid { grid-template-columns: 1fr; max-width: 480px; } }
+
+
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-wrap { max-width: 480px; margin: 0 auto; }
+  .about-badge { bottom: -14px; right: 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .points-summary { grid-template-columns: repeat(4, 1fr); }
+  .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  .coaching-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* Mobile: up to 768px */
+@media (max-width: 768px) {
+
+  /* NAV */
+  #navbar { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: block !important; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px; left: 0; right: 0; bottom: 0;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(12px);
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    z-index: 999;
+  }
+  .nav-links.open a {
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* SHARED */
+  .container { padding: 0 20px; }
+  h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .section-intro { margin-bottom: 40px; font-size: 0.9rem; }
+
+  /* HERO */
+  #hero { padding: 0 20px; min-height: 100svh; }
+  .hero-content { padding-top: 90px; }
+  .hero-content h1 { font-size: clamp(2.8rem, 12vw, 5rem); }
+  .hero-sub { font-size: 0.7rem; }
+  .hero-location { font-size: 0.78rem; }
+  .hero-desc { font-size: 0.9rem; max-width: 100%; }
+  .hero-btns { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; font-size: 0.75rem; }
+  .hero-stats { flex-wrap: wrap; gap: 0; }
+  .stat-item { width: 50%; border-right: none; padding: 16px 0; }
+  .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat-divider { display: none; }
+
+  /* ABOUT */
+  #about { padding: 72px 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-wrap { max-width: 100%; }
+  .about-badge { bottom: 12px; right: 12px; font-size: 0.68rem; padding: 10px 14px; }
+  .horses-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* SERVICES */
+  #services { padding: 72px 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  .service-card { padding: 32px 24px; }
+
+  /* ONLINE COACHING */
+  #online-coaching { padding: 72px 0; }
+  .coaching-grid { grid-template-columns: 1fr; gap: 40px; }
+  .coaching-features { grid-template-columns: 1fr; gap: 16px; }
+  .coaching-feature { padding: 20px; }
+
+  /* SCORES */
+  #scores { padding: 72px 0; }
+  .points-summary { grid-template-columns: repeat(2, 1fr); gap: 2px; margin-bottom: 32px; }
+  .pts-card { padding: 16px 8px; }
+  .pts-val { font-size: 1.1rem; }
+  .results-table th, .results-table td { padding: 10px 10px; font-size: 0.78rem; }
+
+  /* TESTIMONIALS */
+  #testimonials { padding: 72px 0; }
+  .testi-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
+  .testi-card { padding: 32px 24px; }
+
+  /* CONTACT */
+  #contact { padding: 72px 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .form-row { flex-direction: column; gap: 12px; }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea { font-size: 16px; }
+  .social-links { flex-wrap: wrap; gap: 8px; }
+
+  /* FOOTER */
+  footer { padding: 48px 0 32px; }
+  .footer-links { gap: 16px; }
+
+  /* SPONSORS */
+  .sponsors-section { padding: 72px 0; }
+  .sponsors-grid { grid-template-columns: 1fr; max-width: 360px; gap: 20px; }
+}
+
+/* Small mobile: up to 480px */
+@media (max-width: 480px) {
+  .nav-logo { font-size: 1.1rem; }
+  .hero-content h1 { font-size: clamp(2.4rem, 13vw, 3.5rem); }
+  .points-summary { grid-template-columns: repeat(2, 1fr); }
+  .horses-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .sponsor-card { padding: 28px 20px; }
+}

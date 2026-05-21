@@ -27,19 +27,17 @@ window.addEventListener('scroll', () => {
 
 // Hamburger mobile menu
 const hamburger = document.getElementById('hamburger');
-const navLinksList = document.querySelector('.nav-links');
+const navLinks = document.querySelector('.nav-links');
 hamburger && hamburger.addEventListener('click', () => {
-  const open = navLinksList.style.display === 'flex';
-  navLinksList.style.display = open ? 'none' : 'flex';
-  navLinksList.style.flexDirection = 'column';
-  navLinksList.style.position = 'absolute';
-  navLinksList.style.top = '70px';
-  navLinksList.style.left = '0';
-  navLinksList.style.right = '0';
-  navLinksList.style.background = 'rgba(10,10,10,0.98)';
-  navLinksList.style.padding = '20px 40px 30px';
-  navLinksList.style.gap = '20px';
-  navLinksList.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+  navLinks.classList.toggle('open');
+  hamburger.innerHTML = navLinks.classList.contains('open') ? '&#10005;' : '&#9776;';
+});
+// Close menu when a nav link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.innerHTML = '&#9776;';
+  });
 });
 
 // Animate elements on scroll (Intersection Observer)
