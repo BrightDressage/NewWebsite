@@ -304,15 +304,16 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 70px; left: 0; right: 0; bottom: 0;
-    background: rgba(5,5,5,0.97);
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(5,5,5,0.97) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     align-items: center;
     justify-content: center;
     gap: 40px;
-    z-index: 999;
-    border-top: 1px solid rgba(201,169,110,0.2);
+    z-index: 9999;
+    border-top: none;
+    padding-top: 70px;
   }
   .nav-links.open li a {
     font-size: 1.2rem;
@@ -357,11 +358,6 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 
   /* ONLINE COACHING */
   #online-coaching { padding: 72px 0; }
-  .coaching-inner { display: flex !important; flex-direction: column; gap: 40px; }
-  .coaching-text { order: 1; }
-  .coaching-card-wrap { order: 2; flex-direction: column; gap: 16px; }
-  .coaching-btns { order: 3; flex-direction: column; gap: 12px; }
-  .coaching-btns a { text-align: center; width: 100%; box-sizing: border-box; }
   .coaching-grid { grid-template-columns: 1fr; gap: 40px; }
   .coaching-features { grid-template-columns: 1fr; gap: 16px; }
   .coaching-feature { padding: 20px; }
@@ -409,12 +405,16 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .img-label small { font-size: 0.9rem; }
   .about-img-placeholder { aspect-ratio: 4/3; }
 
-  /* COACHING PACKAGES - stack packages above buttons on mobile */
-  .coaching-inner { display: flex; flex-direction: column; }
-  .coaching-text { order: 1; }
-  .coaching-card-wrap { order: 2; margin-top: 32px; }
-  .coaching-btns { order: 3; margin-top: 24px; flex-direction: column; gap: 12px; }
-  .coaching-btns a { text-align: center; width: 100%; }
+  /* COACHING PACKAGES - correct order on mobile: text → packages → buttons */
+  .coaching-inner { display: flex !important; flex-direction: column; gap: 0; }
+  .coaching-text { display: contents; }
+  .coaching-text .section-tag { order: 1; margin-bottom: 8px; }
+  .coaching-text h2 { order: 2; margin-bottom: 16px; }
+  .coaching-text > p { order: 3; margin-bottom: 20px; }
+  .coaching-list { order: 4; margin-bottom: 24px; }
+  .coaching-card-wrap { order: 5; display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+  .coaching-btns { order: 6; display: flex; flex-direction: column; gap: 12px; }
+  .coaching-btns a { text-align: center; width: 100%; box-sizing: border-box; }
 
 /* Small mobile: up to 480px */
 @media (max-width: 480px) {
