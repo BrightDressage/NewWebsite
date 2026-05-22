@@ -232,18 +232,60 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 
 /* ===== MOBILE RESPONSIVE ===== */
 
-/* Tablet: 768px - 1024px */
+/* Tablet / iPad: 768px - 1024px */
 @media (max-width: 1024px) {
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-img-wrap { max-width: 480px; margin: 0 auto; }
-  .about-badge { bottom: -14px; right: 0; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+
+  /* NAV - tighten up for iPad */
+  #navbar { padding: 0 24px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 0.75rem; letter-spacing: 0.06em; }
+  .nav-cta { padding: 8px 16px; font-size: 0.72rem; }
+
+  /* SHARED */
+  .container { padding: 0 32px; }
+  h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+
+  /* HERO */
+  .hero-content { padding: 120px 32px 80px; max-width: 600px; }
+  .hero-content h1 { font-size: clamp(3rem, 7vw, 4.5rem); }
+
+  /* ABOUT */
+  #about { padding: 80px 0; }
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .about-img-wrap { max-width: 100%; }
+  .about-badge { bottom: -14px; right: 0; font-size: 0.7rem; }
+
+  /* SERVICES */
+  #services { padding: 80px 0; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .points-summary { grid-template-columns: repeat(4, 1fr); }
-  .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
-  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card { padding: 32px 24px; }
+
+  /* COACHING */
+  #online-coaching { padding: 80px 0; }
   .coaching-inner { grid-template-columns: 1fr; gap: 48px; }
-  .coaching-grid { grid-template-columns: 1fr; gap: 48px; }
+  .coaching-card-wrap { flex-direction: row; gap: 16px; }
+  .coaching-card { flex: 1; }
+  .coaching-features { grid-template-columns: repeat(2, 1fr); }
+
+  /* SCORES */
+  #scores { padding: 80px 0; }
+  .points-summary { grid-template-columns: repeat(4, 1fr); }
+
+  /* TESTIMONIALS */
+  #testimonials { padding: 80px 0; }
+  .testi-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+  /* SPONSORS */
+  .sponsors-section { padding: 80px 0; }
+  .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* CONTACT */
+  #contact { padding: 80px 0; }
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .form-row { flex-direction: row; gap: 16px; }
+
+  /* FOOTER */
+  footer { padding: 48px 0 32px; }
 }
 
 /* Mobile: up to 768px */
