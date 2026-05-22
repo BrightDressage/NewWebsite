@@ -215,6 +215,8 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 .footer-bd a:hover { color:var(--accent); }
 /* SPONSORS */
 .sponsors-section { background: var(--off-white); padding: 100px 0; }
+.section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 12px; }
+.section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; margin-bottom: 20px; }
 .sponsors-intro { text-align: center; color: var(--mid-grey); font-size: 1rem; max-width: 600px; margin: 0 auto 60px; line-height: 1.7; }
 .sponsors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
 .sponsor-card { background: var(--white); border: 1px solid rgba(0,0,0,0.08); padding: 40px 32px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 16px; transition: box-shadow 0.3s, transform 0.3s; }
@@ -262,9 +264,11 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 
   /* COACHING */
   #online-coaching { padding: 80px 0; }
-  .coaching-inner { grid-template-columns: 1fr; gap: 48px; }
-  .coaching-card-wrap { flex-direction: row; gap: 16px; }
+  .coaching-inner { display: flex !important; flex-direction: column; gap: 48px; }
+  .coaching-text { order: 1; }
+  .coaching-card-wrap { order: 2; flex-direction: row; gap: 16px; }
   .coaching-card { flex: 1; }
+  .coaching-btns { order: 3; }
   .coaching-features { grid-template-columns: repeat(2, 1fr); }
 
   /* SCORES */
@@ -353,11 +357,12 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 
   /* ONLINE COACHING */
   #online-coaching { padding: 72px 0; }
-  .coaching-inner { grid-template-columns: 1fr; gap: 40px; }
+  .coaching-inner { display: flex !important; flex-direction: column; gap: 40px; }
+  .coaching-text { order: 1; }
+  .coaching-card-wrap { order: 2; flex-direction: column; gap: 16px; }
+  .coaching-btns { order: 3; flex-direction: column; gap: 12px; }
+  .coaching-btns a { text-align: center; width: 100%; box-sizing: border-box; }
   .coaching-grid { grid-template-columns: 1fr; gap: 40px; }
-  .coaching-card-wrap { gap: 16px; }
-  .coaching-btns { flex-direction: column; }
-  .coaching-btns a { text-align: center; }
   .coaching-features { grid-template-columns: 1fr; gap: 16px; }
   .coaching-feature { padding: 20px; }
 
@@ -369,7 +374,7 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .results-table th, .results-table td { padding: 10px 10px; font-size: 0.78rem; }
 
   /* TESTIMONIALS */
-  #testimonials { padding: 72px 0; }
+  #testimonials { padding: 72px 0 48px; }
   .testi-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
   .testi-card { padding: 32px 24px; }
 
@@ -387,7 +392,7 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .footer-links { gap: 16px; }
 
   /* SPONSORS */
-  .sponsors-section { padding: 72px 0; }
+  .sponsors-section { padding: 48px 0 64px; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 0; }
   .sponsors-grid { grid-template-columns: 1fr; max-width: 360px; gap: 20px; }
 }
 
