@@ -301,10 +301,12 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .nav-cta { display: none; }
   .hamburger { display: block !important; }
   .nav-links.open {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(5,5,5,0.97) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -314,6 +316,7 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
     z-index: 9999;
     border-top: none;
     padding-top: 70px;
+    overflow: hidden;
   }
   .nav-links.open li a {
     font-size: 1.2rem;
