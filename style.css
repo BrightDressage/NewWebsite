@@ -34,6 +34,7 @@ body { font-family: var(--sans); color: var(--black); background: var(--white); 
 .nav-cta { background:var(--white); color:var(--black); padding:10px 22px; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; text-decoration:none; transition: background 0.2s, color 0.2s; }
 .nav-cta:hover { background:var(--accent); color:var(--white); }
 .hamburger { display:none; background:none; border:none; color:var(--white); font-size:1.5rem; cursor:pointer; }
+.hamburger.open { display:block !important; position:fixed; top:18px; right:20px; z-index:10000; color:var(--white); font-size:2rem; background:none; border:none; cursor:pointer; }
 
 /* HERO */
 #hero {
@@ -118,7 +119,7 @@ p { line-height:1.8; color:var(--dark-grey); font-size:0.95rem; }
   opacity:0.06;
 }
 .coaching-overlay { position:absolute; inset:0; background:radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.08) 0%, transparent 70%); }
-.coaching-inner { position:relative; z-index:2; display:flex; flex-direction:column; gap:60px; align-items:stretch; }
+.coaching-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
 .coaching-text h2 { color:var(--white); font-size:clamp(2rem,3.5vw,2.8rem); margin-bottom:24px; }
 .coaching-text p { color:rgba(255,255,255,0.65); margin-bottom:28px; font-size:0.95rem; }
 .coaching-text strong { color:var(--white); }
@@ -393,10 +394,9 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   /* SPONSORS */
   .sponsors-section { padding: 48px 0 64px; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 0; }
   .sponsors-grid { grid-template-columns: 1fr; max-width: 360px; gap: 20px; }
-}
 
 
-  /* STAT BAR */
+/* STAT BAR */
   .stat-bar { flex-wrap: wrap; padding: 0; }
   .stat { padding: 14px 20px; width: 50%; border-right: none; box-sizing: border-box; }
   .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
@@ -420,6 +420,8 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
   .coaching-btns a { text-align: center; width: 100%; box-sizing: border-box; }
 
 /* Small mobile: up to 480px */
+}
+
 @media (max-width: 480px) {
   .nav-logo { font-size: 1.1rem; }
   .hero-content h1 { font-size: clamp(2.4rem, 13vw, 3.5rem); }
