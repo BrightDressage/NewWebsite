@@ -118,7 +118,7 @@ p { line-height:1.8; color:var(--dark-grey); font-size:0.95rem; }
   opacity:0.06;
 }
 .coaching-overlay { position:absolute; inset:0; background:radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.08) 0%, transparent 70%); }
-.coaching-inner { position:relative; z-index:2; display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:start; }
+.coaching-inner { position:relative; z-index:2; display:flex; flex-direction:column; gap:60px; align-items:stretch; }
 .coaching-text h2 { color:var(--white); font-size:clamp(2rem,3.5vw,2.8rem); margin-bottom:24px; }
 .coaching-text p { color:rgba(255,255,255,0.65); margin-bottom:28px; font-size:0.95rem; }
 .coaching-text strong { color:var(--white); }
@@ -128,7 +128,7 @@ p { line-height:1.8; color:var(--dark-grey); font-size:0.95rem; }
 .coaching-btns { display:flex; gap:16px; flex-wrap:wrap; }
 .btn-outline-light { border:1px solid rgba(255,255,255,0.3); color:rgba(255,255,255,0.8); padding:14px 30px; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; font-weight:500; transition:all 0.2s; }
 .btn-outline-light:hover { border-color:var(--accent); color:var(--accent); }
-.coaching-card-wrap { display:flex; flex-direction:column; gap:20px; padding-top:60px; }
+.coaching-card-wrap { display:grid; grid-template-columns:repeat(2, 1fr); gap:30px; }
 .coaching-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:32px; position:relative; }
 .coaching-card.featured-pkg { background:var(--white); border-color:var(--white); }
 .coaching-card.featured-pkg .pkg-header, .coaching-card.featured-pkg .pkg-price { color:var(--black); }
