@@ -31,13 +31,11 @@ const mobileNav = document.querySelector('.nav-links');
 if (hamburger && mobileNav) {
   hamburger.addEventListener('click', () => {
     const isOpen = mobileNav.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
     hamburger.innerHTML = isOpen ? '&#10005;' : '&#9776;';
   });
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
-      hamburger.classList.remove('open');
       hamburger.innerHTML = '&#9776;';
     });
   });
