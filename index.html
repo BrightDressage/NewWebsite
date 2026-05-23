@@ -291,7 +291,7 @@
 <span class="sponsor-tile-desc">UK-designed, the most adjustable &amp; innovative saddles on the market — used at the highest competition levels.</span>
 <span class="sponsor-tile-link">reactorpanelsaddles.com &rarr;</span>
 </a>
-<!-- Duplicate set for seamless desktop loop -->
+<!-- Duplicate set for seamless loop -->
 <a href="https://www.corkfarmequestrian.co.uk/" target="_blank" rel="noopener" class="sponsor-tile" aria-hidden="true">
 <span class="sponsor-tile-name">CORK FARM EQUESTRIAN</span>
 <span class="sponsor-tile-desc">Premium equestrian retailer in Canterbury — saddlery, rider apparel &amp; yard essentials.</span>
@@ -346,10 +346,14 @@
 </div>
 </div>
 <div class="contact-form">
-<form name="contact" method="POST" data-netlify="true">
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<!-- Netlify hidden fields -->
+<input type="hidden" name="form-name" value="contact">
+<input type="hidden" name="_subject" value="New Enquiry — Bright Dressage Website">
+<p style="display:none;"><label>Don't fill this in: <input name="bot-field"></label></p>
 <div class="form-row">
-<input type="text" name="name" placeholder="Your Name" />
-<input type="email" name="email" placeholder="Email Address" />
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="email" name="email" placeholder="Email Address" required />
 </div>
 <input type="text" name="country" placeholder="Your Country" />
 <select name="service">
