@@ -216,7 +216,7 @@ footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,
 .footer-bd a { font-size:0.72rem; color:rgba(255,255,255,0.3); text-decoration:none; }
 .footer-bd a:hover { color:var(--accent); }
 
-/* SPONSORS — white background, accent top border, scrolling marquee */
+/* SPONSORS — white background, accent top border */
 .sponsors-section {
 background: var(--white);
 padding: 100px 0 80px;
@@ -227,14 +227,13 @@ overflow: hidden;
 .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; margin-bottom: 20px; }
 .sponsors-intro { text-align: center; color: var(--mid-grey); font-size: 1rem; max-width: 600px; margin: 0 auto 60px; line-height: 1.7; }
 
-/* Marquee container */
+/* Marquee outer — desktop: faded edges + auto-scroll */
 .sponsors-marquee-outer {
 width: 100%;
 overflow: hidden;
 position: relative;
 padding: 8px 0 20px;
 }
-@media (min-width: 769px) {
 .sponsors-marquee-outer::before,
 .sponsors-marquee-outer::after {
 content: '';
@@ -252,13 +251,13 @@ background: linear-gradient(to right, var(--white), transparent);
 right: 0;
 background: linear-gradient(to left, var(--white), transparent);
 }
-}
 
 @keyframes marquee-scroll {
 0% { transform: translateX(0); }
 100% { transform: translateX(-50%); }
 }
 
+/* Desktop: infinite auto-scroll, duplicate tiles shown */
 .sponsors-track {
 display: flex;
 gap: 24px;
@@ -266,6 +265,7 @@ width: max-content;
 animation: marquee-scroll 32s linear infinite;
 }
 .sponsors-track:hover { animation-play-state: paused; }
+.sponsor-tile[aria-hidden="true"] { display: flex; }
 
 .sponsor-tile {
 flex: 0 0 280px;
@@ -338,9 +338,12 @@ h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
 .points-summary { grid-template-columns: repeat(4, 1fr); }
 #testimonials { padding: 80px 0; }
 .testi-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.sponsors-section { padding: 80px 0 60px; border-top: none; background: var(--off-white); }
-.sponsors-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; padding: 0 24px; }
-.sponsor-tile { flex: 0 0 calc(50% - 12px); }
+.sponsors-section { padding: 80px 0 60px; border-top: none; background: var(--off-white); overflow: hidden; }
+.sponsors-marquee-outer { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 8px 0 16px; }
+.sponsors-marquee-outer::before, .sponsors-marquee-outer::after { display: none; }
+.sponsors-track { animation: none; width: max-content; flex-wrap: nowrap; padding: 0 24px; gap: 20px; }
+.sponsor-tile[aria-hidden="true"] { display: none; }
+.sponsor-tile { flex: 0 0 260px; scroll-snap-align: start; background: var(--white); }
 #contact { padding: 80px 0; }
 .contact-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
 .form-row { flex-direction: row; gap: 16px; }
@@ -399,9 +402,12 @@ h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
 #testimonials { padding: 72px 0 48px; }
 .testi-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
 .testi-card { padding: 32px 24px; }
-.sponsors-section { padding: 48px 0 64px; border-top: none; background: var(--off-white); }
-.sponsors-track { padding: 0 20px; gap: 16px; }
-.sponsor-tile { flex: 0 0 100%; }
+.sponsors-section { padding: 48px 0 64px; border-top: none; background: var(--off-white); overflow: hidden; }
+.sponsors-marquee-outer { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 8px 0 16px; }
+.sponsors-marquee-outer::before, .sponsors-marquee-outer::after { display: none; }
+.sponsors-track { animation: none; width: max-content; flex-wrap: nowrap; padding: 0 20px; gap: 16px; }
+.sponsor-tile[aria-hidden="true"] { display: none; }
+.sponsor-tile { flex: 0 0 260px; scroll-snap-align: start; background: var(--white); }
 #contact { padding: 72px 0; }
 .contact-grid { grid-template-columns: 1fr; gap: 48px; }
 .form-row { flex-direction: column; gap: 12px; }
@@ -423,5 +429,5 @@ footer { padding: 48px 0 32px; }
 .points-summary { grid-template-columns: repeat(2, 1fr); }
 .testi-grid { grid-template-columns: 1fr; }
 .services-grid { grid-template-columns: 1fr; }
-.sponsor-tile { flex: 0 0 100%; padding: 24px 18px; }
+.sponsor-tile { flex: 0 0 240px; padding: 24px 18px; }
 }
