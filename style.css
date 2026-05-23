@@ -26,8 +26,11 @@ border-bottom: 1px solid rgba(255,255,255,0.08);
 padding: 0 40px; height: 70px;
 }
 .nav-inner { display:flex; align-items:center; justify-content:space-between; height:100%; max-width:1400px; margin:0 auto; }
-.nav-logo { font-family: var(--serif); font-size:1.4rem; font-weight:600; color:var(--white); letter-spacing:0.05em; }
-.nav-logo span { color: var(--accent); }
+.nav-logo-wrap { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-logo-img { height:38px; width:auto; opacity:0.92; filter:drop-shadow(0 0 6px rgba(201,169,110,0.25)); transition:opacity 0.2s; }
+.nav-logo-wrap:hover .nav-logo-img { opacity:1; }
+.nav-logo-text { font-family: var(--serif); font-size:1.4rem; font-weight:600; color:var(--white); letter-spacing:0.05em; }
+.nav-logo-text span { color: var(--accent); }
 .nav-links { display:flex; list-style:none; gap:36px; }
 .nav-links a { color: rgba(255,255,255,0.75); text-decoration:none; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; transition:color 0.2s; }
 .nav-links a:hover { color:var(--white); }
@@ -206,6 +209,7 @@ outline:none; transition:border-color 0.2s; width:100%;
 /* FOOTER */
 footer { background:#050505; padding:60px 0 40px; border-top:1px solid rgba(255,255,255,0.07); }
 .footer-inner { text-align:center; }
+.footer-logo-img { height:80px; width:auto; opacity:0.55; margin-bottom:16px; filter:drop-shadow(0 0 8px rgba(201,169,110,0.2)); }
 .footer-logo { font-family:var(--serif); font-size:1.8rem; color:var(--white); font-weight:600; letter-spacing:0.05em; margin-bottom:12px; }
 .footer-logo span { color:var(--accent); }
 .footer-tagline { font-size:0.78rem; color:rgba(255,255,255,0.35); letter-spacing:0.08em; margin-bottom:32px; }
@@ -227,7 +231,6 @@ overflow: hidden;
 .section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; margin-bottom: 20px; }
 .sponsors-intro { text-align: center; color: var(--mid-grey); font-size: 1rem; max-width: 600px; margin: 0 auto 60px; line-height: 1.7; }
 
-/* Marquee outer — desktop: faded edges + auto-scroll */
 .sponsors-marquee-outer {
 width: 100%;
 overflow: hidden;
@@ -257,7 +260,6 @@ background: linear-gradient(to left, var(--white), transparent);
 100% { transform: translateX(-50%); }
 }
 
-/* Desktop: infinite auto-scroll, duplicate tiles shown */
 .sponsors-track {
 display: flex;
 gap: 24px;
@@ -318,6 +320,7 @@ margin-top: 4px;
 .nav-links { gap: 20px; }
 .nav-links a { font-size: 0.75rem; letter-spacing: 0.06em; }
 .nav-cta { padding: 8px 16px; font-size: 0.72rem; }
+.nav-logo-img { height:32px; }
 .container { padding: 0 32px; }
 h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
 .hero-content { padding: 120px 32px 80px; max-width: 600px; }
@@ -348,6 +351,7 @@ h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
 .contact-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
 .form-row { flex-direction: row; gap: 16px; }
 footer { padding: 48px 0 32px; }
+.footer-logo-img { height:64px; }
 }
 
 @media (max-width: 768px) {
@@ -355,6 +359,7 @@ footer { padding: 48px 0 32px; }
 .nav-links { display: none; }
 .nav-cta { display: none; }
 .hamburger { display: block !important; }
+.nav-logo-img { height:30px; }
 .nav-links.open {
 display: flex !important; flex-direction: column;
 position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -414,6 +419,7 @@ h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
 .contact-form input, .contact-form select, .contact-form textarea { font-size: 16px; }
 .social-links { flex-wrap: wrap; gap: 8px; }
 footer { padding: 48px 0 32px; }
+.footer-logo-img { height:56px; }
 .footer-links { gap: 16px; }
 .stat { padding: 14px 20px; width: 50%; box-sizing: border-box; }
 .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
@@ -424,7 +430,8 @@ footer { padding: 48px 0 32px; }
 }
 
 @media (max-width: 480px) {
-.nav-logo { font-size: 1.1rem; }
+.nav-logo-img { height:26px; }
+.nav-logo-text { font-size: 1.1rem; }
 .hero-content h1 { font-size: clamp(2.4rem, 13vw, 3.5rem); }
 .points-summary { grid-template-columns: repeat(2, 1fr); }
 .testi-grid { grid-template-columns: 1fr; }
