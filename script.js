@@ -91,17 +91,32 @@ card.style.transitionDelay = (i * 0.05) + 's';
 
 // Contact form submission handler
 const form = document.querySelector('.contact-form form');
-form && form.addEventListener('submit', (e) => {
+form && form.addEventListener('submit', async (e) => {
 e.preventDefault();
 const btn = form.querySelector('.btn-submit');
+btn.disabled = true;
+btn.textContent = 'Sending…';
+try {
+const response = await fetch('/', {
+method: 'POST',
+headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+body: new URLSearchParams(new FormData(form)).toString(),
+});
+if (!response.ok) throw new Error('Submission failed');
 btn.textContent = 'Message Sent ✓';
 btn.style.background = '#2a7a2a';
 btn.style.color = '#fff';
+form.reset();
+} catch (err) {
+btn.textContent = 'Something went wrong — try again';
+btn.style.background = '#7a2a2a';
+btn.style.color = '#fff';
+}
 setTimeout(() => {
+btn.disabled = false;
 btn.textContent = 'Send Enquiry';
 btn.style.background = '';
 btn.style.color = '';
-form.reset();
 }, 3000);
 });
 
