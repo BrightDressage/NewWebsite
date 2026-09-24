@@ -127,3 +127,27 @@ resultsEl.textContent = '0';
 animateCount(resultsEl, 743, 1600);
 }
 }, 600);
+
+// INSTAGRAM FEED
+(function () {
+  var grid = document.getElementById('ig-grid');
+  var section = document.getElementById('instagram');
+  if (!grid || !section) return;
+  fetch('/api/instagram')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d.posts || !d.posts.length) return;
+      d.posts.forEach(function (p) {
+        var a = document.createElement('a');
+        a.className = 'ig-tile'; a.href = p.link; a.target = '_blank'; a.rel = 'noopener';
+        var img = document.createElement('img');
+        img.src = p.image; img.alt = p.caption || 'Bright Dressage on Instagram'; img.loading = 'lazy';
+        a.appendChild(img);
+        if (p.video) { var v = document.createElement('span'); v.className = 'ig-play'; v.innerHTML = '&#9654;'; a.appendChild(v); }
+        if (p.caption) { var c = document.createElement('span'); c.className = 'ig-caption'; c.textContent = p.caption; a.appendChild(c); }
+        grid.appendChild(a);
+      });
+      section.hidden = false;
+    })
+    .catch(function () {});
+})();
