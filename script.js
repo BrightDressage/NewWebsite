@@ -89,20 +89,36 @@ document.querySelectorAll('.pts-card').forEach((card, i) => {
 card.style.transitionDelay = (i * 0.05) + 's';
 });
 
-// Contact form submission handler
+// Contact form submission handler (posts to Netlify Forms)
 const form = document.querySelector('.contact-form form');
 form && form.addEventListener('submit', (e) => {
 e.preventDefault();
 const btn = form.querySelector('.btn-submit');
-btn.textContent = 'Message Sent ✓';
-btn.style.background = '#2a7a2a';
-btn.style.color = '#fff';
-setTimeout(() => {
+const resetBtn = () => {
+btn.disabled = false;
 btn.textContent = 'Send Enquiry';
 btn.style.background = '';
 btn.style.color = '';
+};
+btn.disabled = true;
+btn.textContent = 'Sending...';
+fetch('/', {
+method: 'POST',
+headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+body: new URLSearchParams(new FormData(form)).toString()
+}).then((res) => {
+if (!res.ok) throw new Error('Request failed: ' + res.status);
+btn.textContent = 'Message Sent ✓';
+btn.style.background = '#2a7a2a';
+btn.style.color = '#fff';
 form.reset();
-}, 3000);
+setTimeout(resetBtn, 4000);
+}).catch(() => {
+btn.textContent = 'Could Not Send, Try Again';
+btn.style.background = '#8a2a2a';
+btn.style.color = '#fff';
+setTimeout(resetBtn, 4000);
+});
 });
 
 // Animate hero stats counting up
