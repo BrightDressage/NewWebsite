@@ -28,11 +28,12 @@
 <li><a href="#about">About</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#online-coaching">Online Coaching</a></li>
+<li><a href="#booking">Book</a></li>
 <li><a href="#scores">Latest Scores</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="#sponsors">Sponsors</a></li>
 </ul>
-<a href="#contact" class="nav-cta">Book Now</a>
+<a href="#booking" class="nav-cta">Book Now</a>
 <button class="hamburger" id="hamburger">&#9776;</button>
 </div>
 </nav>
@@ -50,11 +51,11 @@
 </div>
 </div>
 <div class="hero-stat-bar">
-<div class="stat"><span class="stat-num">2,925</span><span class="stat-label">BD Points</span></div>
+<div class="stat"><span class="stat-num">2,973</span><span class="stat-label">BD Points</span></div>
 <div class="stat-divider"></div>
 <div class="stat"><span class="stat-num">FEI GP</span><span class="stat-label">Highest Level</span></div>
 <div class="stat-divider"></div>
-<div class="stat"><span class="stat-num">746+</span><span class="stat-label">BD Results</span></div>
+<div class="stat"><span class="stat-num">757</span><span class="stat-label">BD Results</span></div>
 <div class="stat-divider"></div>
 <div class="stat"><span class="stat-num">Canterbury</span><span class="stat-label">Kent, UK</span></div>
 </div>
@@ -105,13 +106,13 @@
 <div class="service-icon">&#9651;</div>
 <h3>Private Lessons</h3>
 <p>One-to-one flatwork sessions tailored to your horse and rider combination. Suitable for all levels from Pony Club to seasoned competitors. Joseph works with horses of all breeds and backgrounds.</p>
-<a href="#contact" class="service-link">Enquire &rarr;</a>
+<a href="#booking" class="service-link">See Availability &rarr;</a>
 </div>
 <div class="service-card">
 <div class="service-icon">&#9670;</div>
 <h3>Clinics</h3>
 <p>Group and individual clinics hosted at Bright Dressage and at venues across the UK. Guest clinics welcome. An excellent opportunity to experience high-level coaching in a supportive group environment.</p>
-<a href="#contact" class="service-link">Enquire &rarr;</a>
+<a href="#booking" class="service-link">See Availability &rarr;</a>
 </div>
 <div class="service-card">
 <div class="service-icon">&#9632;</div>
@@ -179,8 +180,70 @@
 </div>
 </div>
 <div class="coaching-btns">
-<a href="#contact" class="btn-primary">Book an Online Session</a>
+<a href="#booking" class="btn-primary" data-booking-open="online">Book an Online Session</a>
 <a href="#contact" class="btn-outline-light">Ask a Question</a>
+</div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+<div class="container">
+<p class="section-tag centered">Real-Time Availability</p>
+<h2 class="centered">Book a Session</h2>
+<p class="section-intro">Training at the yard in Canterbury, or online from wherever you ride. Choose a format below to see Joseph's live calendar and confirm your place.</p>
+
+<div class="booking-switch" role="tablist" aria-label="Booking type">
+<button type="button" class="booking-tab is-active" role="tab" id="booking-tab-yard" data-booking-tab="yard" aria-selected="true" aria-controls="booking-panel"><strong>Yard Bookings</strong><span>Cork Farm, Canterbury</span></button>
+<button type="button" class="booking-tab" role="tab" id="booking-tab-online" data-booking-tab="online" aria-selected="false" aria-controls="booking-panel" tabindex="-1"><strong>Online Coaching</strong><span>Worldwide, via Zoom</span></button>
+</div>
+
+<div class="booking-layout" id="booking-panel" role="tabpanel" aria-labelledby="booking-tab-yard">
+<aside class="booking-aside">
+
+<div class="booking-card" data-booking-info="yard">
+<h3>At the yard</h3>
+<p>One-to-one flatwork and clinic places at Cork Farm, on your own horse. Sessions run through the working week, with clinic dates released ahead of each season.</p>
+<ul class="booking-facts">
+<li><span class="fact-key">Where</span><span class="fact-val">Cork Farm, Long Hill, Old Wives Lees, Canterbury CT4 8BN</span></li>
+<li><span class="fact-key">Levels</span><span class="fact-val">Preliminary through to FEI Grand Prix</span></li>
+<li><span class="fact-key">On the day</span><span class="fact-val">Arrive 15 minutes before your slot to warm up</span></li>
+</ul>
+<div class="booking-flex">
+<p class="booking-flex-title">Travelling a distance?</p>
+<p>Joseph can sometimes group yard sessions together or open a quieter weekday slot for riders coming from further afield. Send the days that work and he'll see what he can do.</p>
+<button type="button" class="btn-outline-dark booking-request" data-request-time="yard">Request Another Time</button>
+</div>
+</div>
+
+<div class="booking-card" data-booking-info="online" hidden>
+<h3>Wherever you ride</h3>
+<p>Live Zoom coaching and video analysis reviews for riders across the UK, the US and beyond. Every time in the calendar is shown in your own time zone automatically.</p>
+<ul class="booking-facts">
+<li><span class="fact-key">Format</span><span class="fact-val">Live Zoom from your arena, or a call through your written feedback</span></li>
+<li><span class="fact-key">Kit</span><span class="fact-val">A phone on a tripod and a pair of headphones is all most riders need</span></li>
+<li><span class="fact-key">Affiliation</span><span class="fact-val">No British Dressage membership required</span></li>
+</ul>
+<div class="booking-flex">
+<p class="booking-flex-title">Nothing at the right hour?</p>
+<p>Online sessions aren't tied to yard hours. Joseph opens early mornings and evenings for riders in other time zones whenever he can — send the times that suit you and he'll confirm a slot by reply.</p>
+<button type="button" class="btn-outline-dark booking-request" data-request-time="online">Request Another Time</button>
+</div>
+</div>
+
+</aside>
+
+<div class="booking-main">
+<div class="booking-options" data-booking-options hidden></div>
+<div class="booking-stage" data-booking-stage>
+<div class="booking-notice">
+<p class="booking-notice-title">Live booking opens shortly</p>
+<p>Joseph's online calendar is being set up. Until it goes live, send an enquiry with the times that suit you and he'll come straight back to confirm.</p>
+<a href="#contact" class="btn-outline-dark">Send an Enquiry</a>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </section>
@@ -190,17 +253,17 @@
 <div class="container">
 <p class="section-tag centered">Direct from British Dressage</p>
 <h2 class="centered">Latest Competition Results</h2>
-<p class="section-intro">Joseph's most recent results from the BD official results system. Total career points: <strong>2,925</strong> across 746+ recorded results.</p>
+<p class="section-intro">Joseph's most recent results from the BD official results system. Total career points: <strong>2,973</strong> across 757 recorded results.</p>
 
 <div class="points-summary">
-<div class="pts-card"><span class="pts-level">FEI Grand Prix</span><span class="pts-val">30 pts</span></div>
-<div class="pts-card"><span class="pts-level">FEI Inter II</span><span class="pts-val">74 pts</span></div>
+<div class="pts-card"><span class="pts-level">FEI Grand Prix</span><span class="pts-val">33 pts</span></div>
+<div class="pts-card"><span class="pts-level">FEI Inter II</span><span class="pts-val">83 pts</span></div>
 <div class="pts-card"><span class="pts-level">FEI Inter I</span><span class="pts-val">179 pts</span></div>
 <div class="pts-card"><span class="pts-level">FEI PSG</span><span class="pts-val">273 pts</span></div>
 <div class="pts-card"><span class="pts-level">Adv. Medium</span><span class="pts-val">362 pts</span></div>
 <div class="pts-card"><span class="pts-level">Medium</span><span class="pts-val">544 pts</span></div>
-<div class="pts-card"><span class="pts-level">Elementary</span><span class="pts-val">726 pts</span></div>
-<div class="pts-card highlight"><span class="pts-level">TOTAL</span><span class="pts-val total">2,925</span></div>
+<div class="pts-card"><span class="pts-level">Elementary</span><span class="pts-val">750 pts</span></div>
+<div class="pts-card highlight"><span class="pts-level">TOTAL</span><span class="pts-val total">2,973</span></div>
 </div>
 
 <div class="results-table-wrap">
@@ -209,15 +272,18 @@
 <tr><th>Date</th><th>Show</th><th>Horse</th><th>Class</th><th>Score %</th><th>Place</th></tr>
 </thead>
 <tbody>
+<tr><td>10 Sep 2026</td><td>Somerford Park National Championships</td><td>Fame III</td><td>FEI INTII</td><td class="score good">60.91%</td><td>22nd</td></tr>
+<tr><td>23 Jul 2026</td><td>Bury Farm Summer Regional</td><td>Beau Bordeaux</td><td>E6</td><td class="score great">66.97%</td><td>9th</td></tr>
+<tr><td>11 Jun 2026</td><td>Brantridge Park Stud</td><td>Fame III</td><td>FEI GP</td><td class="score good">65.87%</td><td class="place-1">1st &#9733;</td></tr>
+<tr><td>03 Jun 2026</td><td>Wellington Riding Premier League</td><td>Fame III</td><td>FEI INTII</td><td class="score great">66.86%</td><td>5th</td></tr>
+<tr><td>02 Jun 2026</td><td>Wellington Riding Premier League</td><td>Fame III</td><td>FEI INTII</td><td class="score great">67.11%</td><td>6th</td></tr>
+<tr><td>30 May 2026</td><td>Speedgate Events</td><td>Benidorm MS</td><td>P4Q</td><td class="score great">72.00%</td><td class="place-1">1st &#9733;</td></tr>
+<tr><td>30 May 2026</td><td>Speedgate Events</td><td>Beau Bordeaux</td><td>E5Q</td><td class="score great">69.53%</td><td class="place-1">1st &#9733;</td></tr>
+<tr><td>30 May 2026</td><td>Speedgate Events</td><td>Beau Bordeaux</td><td>E6Q</td><td class="score great">68.94%</td><td class="place-1">1st &#9733;</td></tr>
+<tr><td>30 May 2026</td><td>Speedgate Events</td><td>Benidorm MS</td><td>P5Q</td><td class="score great">68.33%</td><td class="place-1">1st &#9733;</td></tr>
+<tr><td>23 May 2026</td><td>Dressage at Hascombe</td><td>Beau Bordeaux</td><td>E6Q</td><td class="score great">69.39%</td><td class="place-1">1st &#9733;</td></tr>
+<tr><td>23 May 2026</td><td>Dressage at Hascombe</td><td>Beau Bordeaux</td><td>E5Q</td><td class="score great">68.44%</td><td>2nd</td></tr>
 <tr><td>16 May 2026</td><td>Chart Stables Intl Dressage PL @ Hickstead</td><td>Fame III</td><td>FEI INTB</td><td class="score good">64.50%</td><td>6th</td></tr>
-<tr><td>14 May 2026</td><td>Chart Stables Intl Dressage PL @ Hickstead</td><td>Fame III</td><td>FEI INTA</td><td class="score good">65.20%</td><td>8th</td></tr>
-<tr><td>13 May 2026</td><td>Chart Stables Intl Dressage PL @ Hickstead</td><td>Fame III</td><td>FEI INTII</td><td class="score good">64.02%</td><td>13th</td></tr>
-<tr><td>05 May 2026</td><td>Felbridge Showground</td><td>Beau Bordeaux</td><td>M5Q</td><td class="score good">64.67%</td><td>3rd</td></tr>
-<tr><td>26 Apr 2026</td><td>Addington Premier League</td><td>Fame III</td><td>FEI FSMGP</td><td class="score great">67.16%</td><td>2nd</td></tr>
-<tr><td>25 Apr 2026</td><td>Addington Premier League</td><td>Fame III</td><td>FEI GP</td><td class="score good">62.50%</td><td>28th</td></tr>
-<tr><td>24 Apr 2026</td><td>Addington Premier League</td><td>Fame III</td><td>FEI INTII</td><td class="score good">64.26%</td><td>19th</td></tr>
-<tr><td>22 Feb 2026</td><td>Wellington Riding Winter Regional</td><td>Knockahunna Jester</td><td>E6</td><td class="score good">64.55%</td><td>10th</td></tr>
-<tr><td>07 Feb 2026</td><td>Saddlesdane EC</td><td>Knockahunna Jester</td><td>E5Q</td><td class="score great">66.41%</td><td class="place-1">1st &#9733;</td></tr>
 </tbody>
 </table>
 </div>
@@ -382,6 +448,7 @@
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#online-coaching">Online Coaching</a>
+<a href="#booking">Book</a>
 <a href="#scores">Results</a>
 <a href="#contact">Contact</a>
 <a href="#">Privacy Policy</a>
@@ -391,6 +458,7 @@
 </div>
 </footer>
 <script src="./script.js"></script>
+<script src="./booking.js"></script>
 
 </body>
 
