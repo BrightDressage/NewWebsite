@@ -510,3 +510,16 @@ footer { padding: 48px 0 32px; }
 .booking-notice { padding:48px 22px; }
 .booking-flex .btn-outline-dark { display:block; width:100%; text-align:center; }
 }
+
+/* INSTAGRAM: single row + FOOTER SOCIAL */
+#instagram { padding:80px 0; }
+.ig-grid { grid-template-columns:repeat(6,1fr); gap:8px; margin-top:32px; }
+.ig-caption { display:none; }
+.footer-social { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin:-12px 0 32px; }
+.footer-social a { color:var(--accent); text-decoration:none; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; opacity:0.75; transition:opacity 0.2s; }
+.footer-social a:hover { opacity:1; }
+@media (max-width: 900px) {
+#instagram { padding:64px 0; }
+.ig-grid { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:8px; margin-top:24px; padding-bottom:8px; -webkit-overflow-scrolling:touch; }
+.ig-tile { flex:0 0 42%; scroll-snap-align:start; }
+}
