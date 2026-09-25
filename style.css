@@ -54,10 +54,11 @@ background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 40%, #2a2a2a 100%);
 overflow:hidden;
 }
 #hero::before {
-content:''; position:absolute; inset:0;
-background: url('./hero-joseph.jpg') right center / auto 100% no-repeat;
+content:''; position:absolute; top:0; bottom:0; right:0; left:auto;
+aspect-ratio: 915 / 800; max-width:100%;
+background: url('./hero-joseph.jpg') right center / cover no-repeat;
 opacity:0.85;
--webkit-mask-image: linear-gradient(to right, transparent 38%, #000 62%); mask-image: linear-gradient(to right, transparent 38%, #000 62%);
+-webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 18%, #000 45%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 18%, #000 45%);
 }
 .hero-overlay { position:absolute; inset:0; background: linear-gradient(to right, rgba(10,10,10,0.95) 42%, rgba(10,10,10,0.05) 65%, rgba(10,10,10,0) 100%); }
 .hero-content { position:relative; z-index:2; max-width:700px; padding: 140px 80px 80px; }
@@ -430,7 +431,7 @@ footer { padding: 48px 0 32px; }
 /* HERO + BIO PHOTOS */
 .about-img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
 @media (max-width: 900px) {
-#hero::before { background-size: cover; background-position: 60% center; opacity:0.6; -webkit-mask-image:none; mask-image:none; }
+#hero::before { left:0; aspect-ratio:auto; background-size: cover; background-position: 60% center; opacity:0.6; -webkit-mask-image:none; mask-image:none; }
 }
 
 /* INSTAGRAM FEED */
