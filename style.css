@@ -578,3 +578,20 @@ footer { padding: 48px 0 32px; }
 .contact-item a { color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.8; text-decoration:none; }
 .contact-item a:hover { color:var(--accent); }
 .testi-footer { text-align:center; margin-top:40px; }
+.testi-rating { font-family:var(--serif); font-size:1.3rem; color:var(--black); margin-bottom:20px; }
+.testi-rating strong { color:var(--accent); font-size:1.8rem; font-weight:600; }
+.testi-footer .btn-outline-dark { margin:6px; }
+.testi-leave { background:var(--black); color:var(--white); }
+.testi-leave:hover { background:var(--accent); border-color:var(--accent); }
+/* SECTION COLOUR SPLIT: events white, results off-white, Instagram dark */
+#scores { background:var(--off-white); }
+#scores .pts-card { background:var(--white); }
+#scores .pts-card.highlight { background:var(--black); }
+#scores .results-table tbody tr { background:var(--white); }
+#scores .results-table tbody tr:hover { background:var(--light-grey); }
+#instagram { background:var(--black); }
+#instagram h2 { color:var(--white); }
+#instagram .ig-tile { background:#1a1a1a; }
+#instagram .btn-outline-dark { border-color:rgba(255,255,255,0.4); color:var(--white); }
+#instagram .btn-outline-dark:hover { background:var(--white); color:var(--black); border-color:var(--white); }
+.testi-badge { display:block; width:190px; height:auto; margin:0 auto 14px; }
