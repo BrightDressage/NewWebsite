@@ -167,3 +167,39 @@ animateCount(resultsEl, 743, 1600);
     })
     .catch(function () {});
 })();
+
+// SPONSORS: arrow controls for the manual scroll on mobile
+(function () {
+  var outer = document.querySelector('.sponsors-marquee-outer');
+  var arrows = document.querySelectorAll('.sponsors-arrow');
+  if (!outer || !arrows.length) return;
+  function step() {
+    var tile = outer.querySelector('.sponsor-tile');
+    var gap = parseFloat(getComputedStyle(outer.querySelector('.sponsors-track')).columnGap) || 16;
+    return tile.getBoundingClientRect().width + gap;
+  }
+  function update() {
+    var max = outer.scrollWidth - outer.clientWidth - 2;
+    arrows[0].disabled = outer.scrollLeft <= 2;
+    arrows[1].disabled = outer.scrollLeft >= max;
+  }
+  arrows.forEach(function (b) {
+    b.addEventListener('click', function () {
+      outer.scrollBy({ left: step() * Number(b.getAttribute('data-sponsors-dir')), behavior: 'smooth' });
+    });
+  });
+  outer.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// ENQUIRE links: pre-select the matching option in the enquiry form
+document.querySelectorAll('[data-enquire]').forEach(function (a) {
+  a.addEventListener('click', function () {
+    var sel = document.querySelector('select[name="service"]');
+    if (!sel) return;
+    Array.prototype.forEach.call(sel.options, function (o) {
+      if (o.text.trim() === a.getAttribute('data-enquire')) sel.value = o.value;
+    });
+  });
+});
