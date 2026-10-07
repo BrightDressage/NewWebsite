@@ -602,3 +602,32 @@ footer { padding: 48px 0 32px; }
 .testi-badge { clip-path:polygon(0 0,100% 0,100% 80%,53% 80%,53% 100%,0 100%); margin-bottom:22px; }
 .booking-events-link { display:block; width:fit-content; margin:-24px auto 44px; font-size:0.76rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:var(--black); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:4px; transition:color 0.2s; }
 .booking-events-link:hover { color:var(--accent); }
+
+/* MOBILE HERO: show the whole photo, text sits over a bottom fade */
+@media (max-width: 900px) {
+#hero { justify-content:flex-end; }
+#hero::before { opacity:0.9; background-position: 62% top; }
+.hero-overlay { background: linear-gradient(to bottom, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.1) 30%, rgba(10,10,10,0.82) 58%, rgba(10,10,10,0.96) 100%); }
+.hero-content { padding-top:0; padding-bottom:150px; }
+.hero-stat-bar { padding:16px 8px; }
+.hero-stat-bar .stat { padding:0 6px; flex:1 1 0; min-width:0; }
+.hero-stat-bar .stat-num { font-size:1.05rem; white-space:nowrap; }
+.hero-stat-bar .stat-label { font-size:0.55rem; letter-spacing:0.1em; }
+}
+/* FOOTER SOCIAL ICONS */
+.footer-social { gap:22px; }
+.footer-social a.soc { width:22px; height:22px; background:var(--accent); -webkit-mask:center / contain no-repeat; mask:center / contain no-repeat; }
+.footer-social a.soc-instagram { -webkit-mask-image:url('./icon-instagram.svg'); mask-image:url('./icon-instagram.svg'); }
+.footer-social a.soc-facebook { -webkit-mask-image:url('./icon-facebook.svg'); mask-image:url('./icon-facebook.svg'); }
+.footer-social a.soc-youtube { -webkit-mask-image:url('./icon-youtube.svg'); mask-image:url('./icon-youtube.svg'); }
+.footer-social a.soc-tiktok { -webkit-mask-image:url('./icon-tiktok.svg'); mask-image:url('./icon-tiktok.svg'); }
+
+/* Reviews: badge above the cards, small and muted; strip distinct from sponsors */
+#testimonials { background:#ece8e1; }
+#testimonials .testi-card { background:var(--white); }
+#testimonials .testi-badge { width:104px; margin:18px auto 0; filter:grayscale(1); opacity:0.6; }
+/* Events link under booking tabs: more room on mobile */
+@media (max-width: 900px) {
+.booking-events-link { margin:4px auto 40px; text-align:center; }
+.booking-events-link span { display:block; font-weight:400; color:var(--mid-grey); margin-bottom:8px; }
+}
