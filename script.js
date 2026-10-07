@@ -171,7 +171,7 @@ animateCount(resultsEl, 743, 1600);
 // SPONSORS: arrow controls for the manual scroll on mobile
 (function () {
   var outer = document.querySelector('.sponsors-marquee-outer');
-  var arrows = document.querySelectorAll('.sponsors-arrow');
+  var arrows = document.querySelectorAll('.sponsors-nav .sponsors-arrow');
   if (!outer || !arrows.length) return;
   function step() {
     var tile = outer.querySelector('.sponsor-tile');
@@ -203,3 +203,23 @@ document.querySelectorAll('[data-enquire]').forEach(function (a) {
     });
   });
 });
+
+// REVIEWS: arrow controls for the mobile carousel
+(function () {
+  var grid = document.querySelector('#testimonials .testi-grid');
+  var arrows = document.querySelectorAll('.testi-nav .sponsors-arrow');
+  if (!grid || !arrows.length) return;
+  function update() {
+    arrows[0].disabled = grid.scrollLeft <= 2;
+    arrows[1].disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 2;
+  }
+  arrows.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var card = grid.querySelector('.testi-card');
+      grid.scrollBy({ left: (card.getBoundingClientRect().width + 16) * Number(b.getAttribute('data-testi-dir')), behavior: 'smooth' });
+    });
+  });
+  grid.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
