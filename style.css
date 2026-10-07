@@ -575,3 +575,6 @@ footer { padding: 48px 0 32px; }
 .events-past-list li { grid-template-columns:1fr auto; gap:4px 12px; }
 .past-date { grid-column:1 / -1; }
 }
+.contact-item a { color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.8; text-decoration:none; }
+.contact-item a:hover { color:var(--accent); }
+.testi-footer { text-align:center; margin-top:40px; }
