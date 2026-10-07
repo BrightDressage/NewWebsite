@@ -598,3 +598,5 @@ footer { padding: 48px 0 32px; }
 /* COACHING STRIP: plain black, no background image */
 #online-coaching::before { display:none; }
 #online-coaching .coaching-overlay { display:none; }
+/* Reviews: hide the stars in the badge image */
+.testi-badge { clip-path:polygon(0 0,100% 0,100% 80%,53% 80%,53% 100%,0 100%); margin-bottom:22px; }
