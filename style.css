@@ -693,3 +693,9 @@ footer { padding: 48px 0 32px; }
 @media (max-width: 900px) {
 #hero::before { aspect-ratio:auto; background-position: 50% 12%; -webkit-mask-image:none; mask-image:none; }
 }
+
+/* BOOKING: help line above the calendar */
+.booking-help { margin-bottom:14px; font-size:0.85rem; line-height:1.7; color:var(--dark-grey); }
+.booking-help p + p { color:var(--mid-grey); }
+.booking-help a { color:var(--black); font-weight:600; text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:4px; }
+.booking-help a:hover { color:var(--accent); }
