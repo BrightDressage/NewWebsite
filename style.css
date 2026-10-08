@@ -687,3 +687,9 @@ footer { padding: 48px 0 32px; }
 #scores .results-table th { font-size:0.6rem; letter-spacing:0.06em; }
 #scores .results-table td:first-child { white-space:nowrap; }
 }
+
+/* HERO PHOTO v2: portrait riding shot */
+#hero::before { aspect-ratio: 787 / 1066; background-position: center top; -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 22%, #000 50%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 22%, #000 50%); }
+@media (max-width: 900px) {
+#hero::before { aspect-ratio:auto; background-position: 50% 12%; -webkit-mask-image:none; mask-image:none; }
+}
