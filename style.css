@@ -701,3 +701,22 @@ footer { padding: 48px 0 32px; }
 @media (max-width: 900px) { .booking-help { padding:4px 22px 20px; } }
 .booking-help a { color:var(--black); font-weight:600; text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:4px; }
 .booking-help a:hover { color:var(--accent); }
+
+/* PIVO STRIP */
+#pivo { background:var(--white); padding:100px 0; }
+.pivo-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:64px; align-items:center; }
+.pivo-media img { width:100%; height:auto; display:block; }
+#pivo .section-tag { color:var(--accent); }
+.pivo-copy h2 { font-family:var(--serif); font-weight:300; font-size:clamp(2rem,3.4vw,2.8rem); margin:6px 0 18px; }
+.pivo-copy > p { font-size:0.95rem; line-height:1.8; color:#555; }
+.pivo-points { list-style:none; margin:22px 0; padding:0; }
+.pivo-points li { font-size:0.88rem; color:var(--dark-grey); padding:10px 0 10px 26px; border-bottom:1px solid var(--light-grey); position:relative; }
+.pivo-points li::before { content:'\2713'; position:absolute; left:0; color:var(--accent); }
+.pivo-copy > p.pivo-zoom { font-size:0.88rem; margin-bottom:26px; padding:14px 18px; background:var(--off-white); border-left:2px solid var(--accent); }
+.pivo-zoom strong { color:var(--black); }
+.pivo-btns { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+@media (max-width: 900px) {
+#pivo { padding:72px 0; }
+.pivo-grid { grid-template-columns:1fr; gap:28px; }
+.pivo-media { max-width:420px; margin:0 auto; }
+}
