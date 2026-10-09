@@ -695,7 +695,9 @@ footer { padding: 48px 0 32px; }
 }
 
 /* BOOKING: help line above the calendar */
-.booking-help { margin-bottom:14px; font-size:0.85rem; line-height:1.7; color:var(--dark-grey); }
-.booking-help p + p { color:var(--mid-grey); }
+.booking-help { background:var(--white); border:1px solid var(--light-grey); padding:6px 30px 24px; margin-bottom:16px; }
+.booking-help .booking-facts { margin-top:0; }
+.booking-help .booking-facts li:first-child { border-top:none; }
+@media (max-width: 900px) { .booking-help { padding:4px 22px 20px; } }
 .booking-help a { color:var(--black); font-weight:600; text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:4px; }
 .booking-help a:hover { color:var(--accent); }
