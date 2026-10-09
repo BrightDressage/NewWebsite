@@ -720,3 +720,16 @@ footer { padding: 48px 0 32px; }
 .pivo-grid { grid-template-columns:1fr; gap:28px; }
 .pivo-media { max-width:420px; margin:0 auto; }
 }
+
+/* COOKIE BAR */
+.cookie-bar { position:fixed; left:16px; right:16px; bottom:16px; z-index:1000; max-width:760px; margin:0 auto; background:var(--black); color:rgba(255,255,255,0.8); border-top:2px solid var(--accent); padding:18px 22px; display:flex; align-items:center; gap:22px; box-shadow:0 12px 40px rgba(0,0,0,0.3); }
+.cookie-bar[hidden] { display:none; }
+.cookie-bar p { font-size:0.82rem; line-height:1.6; margin:0; flex:1; color:rgba(255,255,255,0.85) !important; }
+.cookie-bar a { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+.cookie-btns { display:flex; gap:10px; flex-shrink:0; }
+.cookie-btns button { font-family:var(--sans); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; padding:11px 20px; cursor:pointer; border:1px solid var(--white); background:var(--white); color:var(--black); min-width:104px; }
+.cookie-btns button:hover { background:var(--accent); border-color:var(--accent); color:var(--white); }
+@media (max-width: 600px) {
+.cookie-bar { flex-direction:column; align-items:stretch; gap:14px; left:10px; right:10px; bottom:10px; padding:16px 18px; }
+.cookie-btns button { flex:1; }
+}
