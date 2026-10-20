@@ -743,3 +743,9 @@ footer { padding: 48px 0 32px; }
 @media (max-width: 900px) {
 .booking-tab { padding-left:20px; padding-right:56px; }
 }
+
+/* HERO PHOTO v3: wider photo on desktop with a long, soft blend into the black */
+@media (min-width: 901px) {
+#hero::before { aspect-ratio:auto; width:62%; max-width:none; background-size:cover; background-position:62% 18%; -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.6) 35%, #000 60%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.6) 35%, #000 60%); }
+.hero-overlay { background: linear-gradient(to right, rgba(10,10,10,0.92) 30%, rgba(10,10,10,0.35) 55%, rgba(10,10,10,0) 80%); }
+}
