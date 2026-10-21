@@ -749,3 +749,13 @@ footer { padding: 48px 0 32px; }
 #hero::before { aspect-ratio:auto; width:62%; max-width:none; background-size:cover; background-position:62% 18%; -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.6) 35%, #000 60%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.6) 35%, #000 60%); }
 .hero-overlay { background: linear-gradient(to right, rgba(10,10,10,0.92) 30%, rgba(10,10,10,0.35) 55%, rgba(10,10,10,0) 80%); }
 }
+
+/* HERO PHOTO v4: whole photo shown (no heavy zoom), sitting closer to the text,
+   with a soft blurred copy filling the space behind it */
+@media (min-width: 901px) {
+#hero::before { left:36%; right:auto; width:auto; height:100%; aspect-ratio:787 / 1066; max-width:none; background-size:cover; background-position:center top; opacity:1; z-index:1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 18%, #000 40%, #000 66%, rgba(0,0,0,0.5) 84%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 18%, #000 40%, #000 66%, rgba(0,0,0,0.5) 84%, transparent 100%); }
+#hero::after { content:''; position:absolute; top:-40px; bottom:-40px; right:-40px; left:26%; z-index:0; background: url('./hero-joseph.jpg') center 30% / cover no-repeat; filter: blur(30px) brightness(0.55); 
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, #000 40%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, #000 40%); }
+.hero-overlay { z-index:1; background: linear-gradient(to right, rgba(10,10,10,0.92) 28%, rgba(10,10,10,0.3) 42%, rgba(10,10,10,0) 55%); }
+}
