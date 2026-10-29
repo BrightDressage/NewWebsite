@@ -759,3 +759,11 @@ footer { padding: 48px 0 32px; }
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, #000 40%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, #000 40%); }
 .hero-overlay { z-index:1; background: linear-gradient(to right, rgba(10,10,10,0.92) 28%, rgba(10,10,10,0.3) 42%, rgba(10,10,10,0) 55%); }
 }
+
+/* HERO PHOTO v5: landscape photo on desktop, no blur. Phones keep the portrait shot. */
+@media (min-width: 901px) {
+#hero::after { display:none; }
+#hero::before { left:auto; right:0; width:72%; height:100%; aspect-ratio:auto; background:url('./hero-joseph-wide.jpg') 40% center / cover no-repeat; opacity:1; z-index:1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, #000 42%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 20%, #000 42%); }
+.hero-overlay { z-index:1; background: linear-gradient(to right, rgba(10,10,10,0.92) 26%, rgba(10,10,10,0.35) 42%, rgba(10,10,10,0) 58%); }
+}
