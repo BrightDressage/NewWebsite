@@ -3,7 +3,7 @@
    To switch on Google Analytics later, put the Measurement ID (starts with G-) in GA_ID below.
    Analytics only ever loads after the visitor taps Accept. */
 (function () {
-  var GA_ID = '';
+  var GA_ID = 'G-GW6NLDV094';
   var KEY = 'bd-cookie-consent';
 
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
