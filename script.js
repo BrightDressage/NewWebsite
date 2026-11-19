@@ -204,6 +204,17 @@ document.querySelectorAll('[data-enquire]').forEach(function (a) {
   });
 });
 
+// Links from other sites (e.g. brightlivery.co.uk) can pre-select a service: ?enquire=Boot%20Camp#contact
+(function () {
+  var wanted;
+  try { wanted = new URLSearchParams(location.search).get('enquire'); } catch (e) { return; }
+  var sel = document.querySelector('select[name="service"]');
+  if (!wanted || !sel) return;
+  Array.prototype.forEach.call(sel.options, function (o) {
+    if (o.text.trim().toLowerCase() === wanted.trim().toLowerCase()) sel.value = o.value;
+  });
+})();
+
 // REVIEWS: arrow controls for the mobile carousel
 (function () {
   var grid = document.querySelector('#testimonials .testi-grid');
