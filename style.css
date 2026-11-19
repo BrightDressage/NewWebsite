@@ -780,3 +780,30 @@ footer { padding: 48px 0 32px; }
 .nav-links a { font-size:0.72rem; letter-spacing:0.05em; }
 .nav-logo-text { font-size:1.15rem; }
 }
+
+/* BOOT CAMP */
+#boot-camp { background:var(--white); padding:100px 0; }
+#boot-camp .section-tag { color:var(--accent); }
+.camp-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:64px; align-items:center; }
+.camp-copy h2 { font-family:var(--serif); font-weight:300; font-size:clamp(2.2rem,3.6vw,3rem); margin:6px 0 10px; }
+.camp-lead { font-family:var(--serif); font-size:1.35rem; line-height:1.4; color:var(--black); margin-bottom:16px; }
+.camp-copy > p:not(.section-tag):not(.camp-lead) { font-size:0.95rem; line-height:1.8; color:#555; }
+.camp-price { display:flex; align-items:flex-end; gap:36px; flex-wrap:wrap; margin:26px 0 30px; padding:20px 0; border-top:1px solid var(--light-grey); border-bottom:1px solid var(--light-grey); }
+.camp-price div { display:flex; flex-direction:column; }
+.camp-price strong { font-family:var(--serif); font-weight:400; font-size:2.2rem; line-height:1.1; color:var(--black); }
+.camp-price span { font-size:0.8rem; color:#666; }
+.camp-price .camp-from { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); }
+.btn-dark { background:var(--black); color:var(--white); padding:14px 30px; text-decoration:none; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; display:inline-block; transition:background 0.2s; }
+.btn-dark:hover { background:var(--accent); }
+.camp-box { background:var(--off-white); padding:36px 40px; border-top:2px solid var(--accent); }
+.camp-box h3 { font-family:var(--serif); font-weight:400; font-size:1.6rem; margin-bottom:10px; }
+.camp-list { list-style:none; margin:0; padding:0; }
+.camp-list li { font-size:0.9rem; color:var(--dark-grey); padding:11px 0 11px 26px; border-bottom:1px solid var(--light-grey); position:relative; }
+.camp-list li:last-child { border-bottom:none; }
+.camp-list li::before { content:'\2713'; position:absolute; left:0; color:var(--accent); }
+@media (max-width: 900px) {
+#boot-camp { padding:72px 0; }
+.camp-grid { grid-template-columns:1fr; gap:32px; }
+.camp-box { padding:28px 24px; }
+.btn-dark { width:100%; text-align:center; }
+}
