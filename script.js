@@ -213,6 +213,25 @@ document.querySelectorAll('[data-enquire]').forEach(function (a) {
   Array.prototype.forEach.call(sel.options, function (o) {
     if (o.text.trim().toLowerCase() === wanted.trim().toLowerCase()) sel.value = o.value;
   });
+  // Land on the form itself, just below the fixed nav, and hold it there
+  // while the page finishes loading (stops as soon as the visitor scrolls)
+  var form = sel.closest('form');
+  if (!form) return;
+  var root = document.documentElement, stop = false;
+  root.style.scrollBehavior = 'auto';
+  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) {
+    window.addEventListener(ev, function () { stop = true; }, { once: true, passive: true });
+  });
+  function toForm() {
+    if (stop) return;
+    var nav = document.getElementById('navbar');
+    var off = (nav ? nav.offsetHeight : 0) + 16;
+    window.scrollTo(0, form.getBoundingClientRect().top + window.pageYOffset - off);
+  }
+  toForm();
+  window.addEventListener('load', toForm);
+  [300, 800, 1500, 2500].forEach(function (t) { setTimeout(toForm, t); });
+  setTimeout(function () { root.style.scrollBehavior = ''; }, 2600);
 })();
 
 // REVIEWS: arrow controls for the mobile carousel
