@@ -807,3 +807,6 @@ footer { padding: 48px 0 32px; }
 .camp-box { padding:28px 24px; }
 .btn-dark { width:100%; text-align:center; }
 }
+
+/* FOOTER CREDIT */
+.footer-credit { font-size:0.7rem; letter-spacing:0.06em; color:rgba(255,255,255,0.3); margin-top:14px; }
