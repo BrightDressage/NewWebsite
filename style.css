@@ -951,3 +951,5 @@ article#boot-camp.svc-card { background:var(--white); padding:0; display:flex; }
 .svc-also-count { display:block; font-size:0.8rem; color:#777; }
 .svc-also li:last-child { border-bottom:none; }
 }
+@media (min-width: 1201px) { .svc-main { grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; } .svc-body { padding:22px 22px 24px; } .svc-body h3 { font-size:1.55rem; } }
+@media (min-width: 901px) and (max-width: 1200px) { .svc-main { grid-template-columns:repeat(2,minmax(0,1fr)); } }
