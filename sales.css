@@ -162,3 +162,4 @@ img { -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webki
 @media (max-width: 900px) { #enquire .horse-enquire { padding-top:36px; } }
 #enquire .horse-enquire { border-top:none; background:linear-gradient(var(--light-grey),var(--light-grey)) top center / calc(100% - 80px) 1px no-repeat; }
 @media (max-width: 600px) { #enquire .horse-enquire { background-size:calc(100% - 40px) 1px; } }
+@media (min-width: 769px) { #navbar .nav-cta { display:inline-block; } }

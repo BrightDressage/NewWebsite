@@ -253,3 +253,44 @@ document.querySelectorAll('[data-enquire]').forEach(function (a) {
   window.addEventListener('resize', update);
   update();
 })();
+
+// RESULTS: latest 3 on the home page, with a button to show the rest
+(function () {
+  var t = document.getElementById('results-table'), b = document.getElementById('results-more');
+  if (!t || !b) return;
+  b.addEventListener('click', function () {
+    var open = t.classList.toggle('is-short') === false;
+    b.textContent = open ? 'Show fewer results' : 'Show more results';
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+
+// SERVICES on phones: swipe carousel with arrows
+(function () {
+  var grid = document.querySelector('#services .svc-main');
+  var arrows = document.querySelectorAll('.services-nav .sponsors-arrow');
+  if (!grid || !arrows.length) return;
+  function update() {
+    arrows[0].disabled = grid.scrollLeft <= 2;
+    arrows[1].disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 2;
+  }
+  arrows.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var card = grid.querySelector('.svc-card');
+      grid.scrollBy({ left: (card.getBoundingClientRect().width + 16) * Number(b.getAttribute('data-svc-dir')), behavior: 'smooth' });
+    });
+  });
+  grid.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// SERVICES: "Also available" is open on desktop, a tap-to-open drop-down on phones
+(function () {
+  var d = document.getElementById('svc-also');
+  if (!d) return;
+  var mq = window.matchMedia('(max-width: 900px)');
+  function set() { d.open = !mq.matches; }
+  set();
+  if (mq.addEventListener) mq.addEventListener('change', set);
+})();

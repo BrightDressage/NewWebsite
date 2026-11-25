@@ -311,5 +311,8 @@
     });
   });
 
-  render('yard');
+  // /book?type=online opens the online tab straight away.
+  var startType = 'yard';
+  try { startType = new URLSearchParams(location.search).get('type') === 'online' ? 'online' : 'yard'; } catch (err) {}
+  render(startType);
 })();
