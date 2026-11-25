@@ -87,13 +87,6 @@
         (h.headline ? '<p class="horse-headline">' + esc(h.headline) + '</p>' : '') +
         '<div class="horse-price"><strong>' + price(h) + '</strong>' + (h.priceNote && h.status !== 'sold' ? '<span>' + esc(h.priceNote) + '</span>' : '') + '</div>' +
         '<ul class="horse-facts">' + facts + '</ul>' +
-        '<div class="horse-actions">' +
-          (h.status === 'sold' ? '<a href="/sales" class="btn-dark">See horses for sale</a>' :
-          '<a href="#enquire" class="btn-dark">Enquire about ' + esc(h.name) + '</a>' +
-          '<a href="https://wa.me/' + WA + '?text=' + waText + '" target="_blank" rel="noopener" class="btn-line">WhatsApp Joe</a>' +
-          (video ? '<a href="#video" class="btn-line">Watch video</a>' : '')) +
-          '' +
-        '</div>' +
         '<div class="share-box"><span class="share-label">Share this horse</span><div class="share-icons">' +
           '<a class="share-ico" data-share="whatsapp" href="https://wa.me/?text=' + encodeURIComponent(h.name + ' for sale: ' + pageUrl) + '" target="_blank" rel="noopener" aria-label="Share on WhatsApp">' + ICON.wa + '</a>' +
           '<a class="share-ico" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '" target="_blank" rel="noopener" aria-label="Share on Facebook">' + ICON.fb + '</a>' +
@@ -101,25 +94,26 @@
           '<a class="share-ico" data-share="email" href="mailto:?subject=' + encodeURIComponent(h.name + ' for sale') + '&body=' + encodeURIComponent('Have a look at ' + h.name + ': ' + pageUrl) + '" aria-label="Share by email">' + ICON.mail + '</a>' +
         '</div>' +
         '<div class="share-url"><input type="text" readonly value="' + esc(pageUrl) + '" aria-label="Link to this horse"><button type="button" id="share-copy">Copy</button></div>' +
-        '</div></aside></div></div>' +
+        '</div>' +
+        '</aside>' +
+      '<div class="horse-about-text"><h2>About</h2>' +
+        (h.description || []).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
+      '</div>' +
+      (h.highlights && h.highlights.length ? '<div class="horse-highlights"><h3>Highlights</h3><ul class="horse-list">' + h.highlights.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>' : '') +
+      '</div></div>' +
 
       (video ? '<section class="horse-section alt" id="video"><div class="container"><span class="section-label">Video</span><h2>See ' + esc(h.name) + ' working</h2><div class="horse-video">' + video + '</div></div></section>' : '') +
 
-      '<section class="horse-section"><div class="container horse-about"><div>' +
-        '<span class="section-label">About</span><h2>' + esc(h.name) + '</h2>' +
-        (h.description || []).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
-      '</div><div>' +
-        (h.highlights && h.highlights.length ? '<h3>Highlights</h3><ul class="horse-list">' + h.highlights.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '') +
-      '</div></div></section>' +
-
-      (b.sire ? '<section class="horse-section alt"><div class="container"><span class="section-label">Breeding</span><div class="pedigree">' +
+      '<section class="horse-section horse-info"><div class="container">' +
+      (b.sire ? '<div class="horse-breeding"><h3>Breeding</h3><div class="pedigree">' +
         '<div><span>Sire</span><b>' + esc(b.sire) + '</b></div>' +
         '<div><span>Dam</span><b>' + esc(b.dam || '') + '</b></div>' +
         '<div><span>Dam sire</span><b>' + esc(b.damSire || '') + '</b></div></div>' +
-        (h.vetting ? '<p class="vetting-note">' + esc(h.vetting) + '</p>' : '') + '</div></section>' : '') +
+        (h.vetting ? '<p class="vetting-note">' + esc(h.vetting) + '</p>' : '') + '</div>' : '') +
+      '</div></section>' +
 
       (h.status !== 'sold' ? '<section class="horse-section" id="enquire"><div class="container horse-enquire"><div>' +
-        '<span class="section-label">Enquire</span><h2>Ask about ' + esc(h.name) + '</h2>' +
+        '<span class="section-label">Enquire</span><h2>Ask about this horse</h2>' +
         '<p>Send a message and Joseph will come back to you with more video, vetting details or a time to view at Cork Farm.</p>' +
         '<p>Prefer to talk? <a href="https://wa.me/' + WA + '?text=' + waText + '" target="_blank" rel="noopener">WhatsApp Joe &rarr;</a></p>' +
       '</div><form class="horse-form" name="contact" method="POST">' +

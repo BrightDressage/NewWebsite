@@ -128,3 +128,37 @@ img { -webkit-user-drag:none; user-select:none; -webkit-user-select:none; -webki
 .share-url { display:flex; }
 .share-url input { flex:1; min-width:0; border:1px solid var(--light-grey); border-right:none; padding:10px 12px; font:400 0.8rem var(--sans); color:#555; background:var(--off-white); }
 .share-url button { border:1px solid var(--black); background:var(--black); color:#fff; padding:0 18px; font:600 0.7rem/1 var(--sans); letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; }
+.horse-cta { margin-top:32px; }
+/* Info block: about, breeding, then CTA */
+.horse-info h2 { margin-bottom:18px; }
+.horse-breeding { margin-top:56px; }
+.horse-breeding h3 { font-family:var(--serif); font-weight:400; font-size:1.6rem; margin-bottom:12px; }
+.horse-breeding .vetting-note { background:var(--off-white); }
+.horse-cta { margin-top:48px; padding:32px 36px; background:var(--off-white); border-top:2px solid var(--accent); display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:32px; align-items:end; }
+.horse-cta .share-box { margin-top:0; padding-top:0; border-top:none; }
+@media (max-width: 900px) { .horse-cta { grid-template-columns:1fr; padding:26px 22px; gap:24px; } .horse-breeding { margin-top:40px; } }
+.horse-info { padding-top:20px; }
+/* About and highlights sit with the photos */
+.horse-top { grid-template-columns:minmax(0,1.45fr) minmax(0,1fr); grid-template-areas:"gallery panel" "about highlights"; column-gap:48px; row-gap:44px; padding-bottom:20px; }
+.horse-gallery { grid-area:gallery; }
+.horse-panel { grid-area:panel; position:static; }
+.horse-about-text { grid-area:about; }
+.horse-about-text h2 { margin-bottom:16px; }
+.horse-about-text p { font-size:0.98rem; line-height:1.85; color:#444; margin-bottom:16px; }
+.horse-highlights { grid-area:highlights; }
+.horse-highlights h3 { font-family:var(--serif); font-weight:400; font-size:1.6rem; margin:10px 0 12px; }
+.horse-info { padding-top:30px; }
+.horse-breeding { margin-top:0; }
+@media (max-width: 900px) {
+.horse-top { grid-template-columns:1fr; grid-template-areas:"gallery" "panel" "about" "highlights"; row-gap:32px; }
+}
+@media (min-width: 901px) {
+.horse-top { grid-template-areas:"gallery panel" "about panel" "about highlights"; grid-template-rows:auto auto 1fr; row-gap:36px; align-items:start; }
+}
+.horse-panel .share-box { margin-top:4px; padding-top:0; border-top:none; }
+.horse-info { padding-bottom:24px; }
+#enquire { padding-top:24px; }
+#enquire .horse-enquire { border-top:1px solid var(--light-grey); padding-top:48px; }
+@media (max-width: 900px) { #enquire .horse-enquire { padding-top:36px; } }
+#enquire .horse-enquire { border-top:none; background:linear-gradient(var(--light-grey),var(--light-grey)) top center / calc(100% - 80px) 1px no-repeat; }
+@media (max-width: 600px) { #enquire .horse-enquire { background-size:calc(100% - 40px) 1px; } }
